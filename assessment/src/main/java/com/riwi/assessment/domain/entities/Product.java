@@ -1,7 +1,7 @@
 package com.riwi.assessment.domain.entities;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.Size;
+
 import lombok.*;
 
 import java.math.BigDecimal;
@@ -23,4 +23,7 @@ public class Product {
     @Column(nullable = false, columnDefinition = "DECIMAL(10,2)")
     private BigDecimal price;
 
-}
+    @OneToOne
+    @JoinColumn(name = "couponredeemed_id", referencedColumnName = "id")
+    private CouponReedemedEntity couponRedemeed;
+
