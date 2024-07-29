@@ -41,5 +41,4 @@ public interface UserMapper {
     @Mapping(source = "password", target = "password")
     Users userRequestToEntity(UserReq userRequest);
 
-
 }

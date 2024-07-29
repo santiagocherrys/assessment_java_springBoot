@@ -35,7 +35,7 @@ public class Users {
     private String password;
 
     @OneToMany(
-        mappedBy = "coupon",
+        mappedBy = "user",
         fetch = FetchType.EAGER,
         cascade = CascadeType.ALL,
         orphanRemoval = false
@@ -43,7 +43,7 @@ public class Users {
     private List<Coupon> coupon;
 
     @OneToMany(
-        mappedBy = "couponredeemed", 
+        mappedBy = "user", 
         fetch = FetchType.EAGER, 
         cascade = CascadeType.ALL, 
         orphanRemoval = false

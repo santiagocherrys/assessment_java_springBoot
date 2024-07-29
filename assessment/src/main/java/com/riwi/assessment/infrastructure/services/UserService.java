@@ -3,7 +3,6 @@ package com.riwi.assessment.infrastructure.services;
 import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 
 import com.riwi.assessment.api.dtos.request.UserReq;
@@ -22,6 +21,7 @@ import lombok.AllArgsConstructor;
 @Transactional
 @AllArgsConstructor
 public class UserService implements IUserClass {
+    
     @Autowired
     private final UserRepository userRepository;
 
@@ -35,7 +35,6 @@ public class UserService implements IUserClass {
     public UserResp create(UserReq request) {
         Users user = this.userMapper.userRequestToEntity(request);
         user.setCoupon(new ArrayList<>());
-        user.setCouponRedeemed(new ArrayList<>());
         return this.userMapper.userEntityToResponse(this.userRepository.save(user));
     }
 
@@ -45,7 +44,6 @@ public class UserService implements IUserClass {
         Users userUpdate = this.userMapper.userRequestToEntity(request);
         userUpdate.setId(id);
         userUpdate.setCoupon(user.getCoupon());
-        userUpdate.setCouponRedeemed(user.getCouponRedeemed());
         return this.userMapper.userEntityToResponse(this.userRepository.save(userUpdate));
     }
 
@@ -55,10 +53,5 @@ public class UserService implements IUserClass {
         this.userRepository.delete(user);
     }
 
-    @Override
-    public Page<UserResp> getAll(int page, int size) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getAll'");
-    }
 
- }
+}
