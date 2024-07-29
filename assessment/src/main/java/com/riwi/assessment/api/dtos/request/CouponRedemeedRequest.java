@@ -12,11 +12,11 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 public class CouponRedemeedRequest {
-    @NotNull(message = "Coupon is required")
+    
     private Long coupon;
-    @NotNull(message = "Product is required")
+   
     private Long product;
-    @NotNull(message = "User is required")
+   
     private Long user;
 
 

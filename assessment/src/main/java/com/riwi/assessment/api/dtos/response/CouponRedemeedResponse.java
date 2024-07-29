@@ -18,7 +18,7 @@ import lombok.Setter;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class CoupenRedemeedResponse {
+public class CouponRedemeedResponse {
     private Long id;
     private LocalDateTime createdAt;
     private BigDecimal newPrecio;
