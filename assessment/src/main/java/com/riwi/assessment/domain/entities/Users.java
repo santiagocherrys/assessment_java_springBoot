@@ -42,7 +42,7 @@ public class Users {
      private List<Coupon> coupons;
 
      @OneToMany(
-        mappedBy = "user", 
+        mappedBy = "user",
         fetch = FetchType.EAGER, 
         cascade = CascadeType.ALL, 
        orphanRemoval = false
