@@ -15,7 +15,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 public class CouponResponse {
-    private String id;
+    private Long id;
     private BigDecimal discount;
     private LocalDate expirationDate;
     private Boolean state;
