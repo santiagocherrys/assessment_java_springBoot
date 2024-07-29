@@ -1,5 +1,6 @@
 package com.riwi.assessment.domain.entities;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import jakarta.persistence.CascadeType;
@@ -41,8 +42,8 @@ public class Users {
      )
      private List<Coupon> coupons;
 
-     @OneToMany(
-        mappedBy = "user",
+    @OneToMany(
+        mappedBy = "user", 
         fetch = FetchType.EAGER, 
         cascade = CascadeType.ALL, 
        orphanRemoval = false
