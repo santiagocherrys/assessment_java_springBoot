@@ -1,7 +1,9 @@
 package com.riwi.assessment.domain.entities;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -32,19 +34,20 @@ public class Users {
     @Column(nullable = false)
     private String password;
 
-    // @OneToMany(
-    //     mappedBy = "coupon",
-    //     fetch = FetchType.EAGER,
-    //     cascade = CascadeType.ALL,
-    //     orphanRemoval = false
-    // )
-    // private List<Coupon> coupons;
+    @OneToMany(
+        mappedBy = "coupon",
+        fetch = FetchType.EAGER,
+        cascade = CascadeType.ALL,
+        orphanRemoval = false
+    )
+    private List<Coupon> coupon;
 
-    // @OneToMany(
-    //     mappedBy = "couponredeemed", 
-    //     fetch = FetchType.EAGER, 
-    //     cascade = CascadeType.ALL, 
-    //     orphanRemoval = false
-    // )
-    // private List<CouponRedeemed> CouponRedeemed;
+    @OneToMany(
+        mappedBy = "couponredeemed", 
+        fetch = FetchType.EAGER, 
+        cascade = CascadeType.ALL, 
+        orphanRemoval = false
+    )
+    private List<CouponReedemedEntity> CouponRedeemed;
+
 }
