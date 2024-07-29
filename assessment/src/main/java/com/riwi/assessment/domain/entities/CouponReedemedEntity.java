@@ -46,9 +46,9 @@ public class CouponReedemedEntity {
      private Users user;
 
        
-    //  @OneToOne
-    //  @JoinColumn(name = "product_id", referencedColumnName = "id")
-    //  private Product product;
+    @OneToOne
+     @JoinColumn(name = "product_id", referencedColumnName = "id")
+     private Product product;
 
        
      @OneToOne
