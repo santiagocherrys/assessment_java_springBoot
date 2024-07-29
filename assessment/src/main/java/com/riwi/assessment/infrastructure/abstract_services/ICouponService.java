@@ -13,5 +13,6 @@ public interface ICouponService extends
                 Update<CouponRequest, CouponResponse, Long>,
                 Delete<Long>{
 
+
         Boolean isValid(Long id);            
-}
+
