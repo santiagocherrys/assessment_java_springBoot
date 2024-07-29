@@ -23,4 +23,10 @@ public class Product {
     @Column(nullable = false, columnDefinition = "DECIMAL(10,2)")
     private BigDecimal price;
 
+    @OneToOne
+    @JoinColumn(name = "coupon_redeedemed_id", referencedColumnName = "id")
+    private CouponReedemedEntity coupon_reedemed;
+
+
+
 }
