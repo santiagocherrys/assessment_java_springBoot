@@ -18,7 +18,6 @@ public class Product {
     private Long id;
 
     @Column(nullable = false)
-    @Size(min = 0, max = 45, message = "name exceeds the 45 character")
     private String name;
 
     @Column(nullable = false, columnDefinition = "DECIMAL(10,2)")
