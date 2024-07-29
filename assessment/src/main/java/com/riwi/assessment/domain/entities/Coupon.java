@@ -32,7 +32,7 @@ public class Coupon {
     @Column(nullable = false)
     private LocalDate expirationDate;
     @Column(nullable = false)
-    private String state;
+    private Boolean state;
 
     /*@ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "userId", referencedColumnName = "id")
