@@ -10,7 +10,7 @@ import com.riwi.assessment.infrastructure.abstract_services.generic.Update;
 public interface ICouponService extends
                 Create<CouponRequest, CouponResponse>,
                 GetAll<CouponResponse>,
-                Update<CouponRequest, CouponResponse, String>,
-                Delete<String>{
+                Update<CouponRequest, CouponResponse, Long>,
+                Delete<Long>{
     
 }

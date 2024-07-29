@@ -42,7 +42,7 @@ public class CouponService implements ICouponService{
     }
 
     @Override
-    public CouponResponse update(CouponRequest request, String id) {
+    public CouponResponse update(CouponRequest request, Long id) {
         Coupon coupon = this.couponRepository.findById(id).orElseThrow(() -> new RuntimeException("Coupon not found"));
 
         couponMapper.couponToUpdate(request, coupon);
@@ -51,7 +51,7 @@ public class CouponService implements ICouponService{
     }
 
     @Override
-    public void delete(String id) {
+    public void delete(Long id) {
         Coupon coupon = this.couponRepository.findById(id).orElseThrow(() -> new RuntimeException("Coupon not found"));
 
         coupon.setState(false);
