@@ -34,7 +34,7 @@ public class UserService implements IUserClass {
     @Override
     public UserResp create(UserReq request) {
         Users user = this.userMapper.userRequestToEntity(request);
-        user.setCoupon(new ArrayList<>());
+        user.setCoupons(new ArrayList<>());
         return this.userMapper.userEntityToResponse(this.userRepository.save(user));
     }
 
@@ -43,7 +43,7 @@ public class UserService implements IUserClass {
         Users user = this.methodSupportService.findById(this.userRepository, id, "User");
         Users userUpdate = this.userMapper.userRequestToEntity(request);
         userUpdate.setId(id);
-        userUpdate.setCoupon(user.getCoupon());
+        userUpdate.setCoupons(user.getCoupons());
         return this.userMapper.userEntityToResponse(this.userRepository.save(userUpdate));
     }
 

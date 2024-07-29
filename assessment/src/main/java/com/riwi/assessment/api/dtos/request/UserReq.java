@@ -15,8 +15,6 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 public class UserReq {
-    @NotBlank(message = "The id can't be null")
-    private Long id;
     @NotBlank(message = "The user name can't be null")
     private String userName;
     @NotBlank(message = "The name can't be null")

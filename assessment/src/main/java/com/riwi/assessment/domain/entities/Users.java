@@ -16,7 +16,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Entity(name = "users")
+@Entity(name = "users_entity")
 @Setter
 @Getter
 @NoArgsConstructor
@@ -34,20 +34,19 @@ public class Users {
     @Column(nullable = false)
     private String password;
 
-    @OneToMany(
-        mappedBy = "user",
-        fetch = FetchType.EAGER,
-        cascade = CascadeType.ALL,
-        orphanRemoval = false
-    )
-    private List<Coupon> coupon;
+     @OneToMany(
+       mappedBy = "user",
+       fetch = FetchType.EAGER,
+      cascade = CascadeType.ALL,
+       orphanRemoval = false
+     )
+     private List<Coupon> coupons;
 
     @OneToMany(
         mappedBy = "user", 
         fetch = FetchType.EAGER, 
         cascade = CascadeType.ALL, 
-        orphanRemoval = false
+       orphanRemoval = false
     )
-    private List<CouponReedemedEntity> CouponRedeemed;
-
+    private List<CouponReedemedEntity> couponredeemed;
 }
