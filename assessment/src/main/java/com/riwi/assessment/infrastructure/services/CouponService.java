@@ -81,9 +81,9 @@ public class CouponService implements ICouponService{
         return !coupon.getState() && LocalDate.now().isBefore(coupon.getExpirationDate());
     }
 
-        Coupon coupon = this.couponRepository.findById(id).orElseThrow(() -> new RuntimeException("Coupon not found"));
+        //Coupon coupon = this.couponRepository.findById(id).orElseThrow(() -> new RuntimeException("Coupon not found"));
 
-        coupon.setState(false);
-    }    
+        //coupon.setState(false);
+    //}
 
 }

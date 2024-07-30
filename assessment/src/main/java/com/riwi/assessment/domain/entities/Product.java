@@ -24,6 +24,7 @@ public class Product {
     private BigDecimal price;
 
     @OneToOne
-    @JoinColumn(name = "couponredeemed_id", referencedColumnName = "id")
+    @JoinColumn(name = "coupon_redeemed_id", referencedColumnName = "id")
     private CouponReedemedEntity couponRedemeed;
+}
 
